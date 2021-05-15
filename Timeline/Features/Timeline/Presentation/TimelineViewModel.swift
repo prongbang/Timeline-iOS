@@ -14,15 +14,13 @@ class TimelineViewModel: ObservableObject, CoreViewModel {
     
     @Published var state: TimelineState = .Init
     
-    @Published var timelines = [Timeline]()
-    
     func process(intent: TimelineIntent) {
         switch intent {
         case TimelineIntent.GetTimeline:
             self.state = .Loading
             var timelines: [Timeline] = []
             timelines.append(Timeline())
-            self.timelines = timelines
+            self.state = .Success(timelines)
             break
         case TimelineIntent.AddTimeline:
             self.state = .Loading

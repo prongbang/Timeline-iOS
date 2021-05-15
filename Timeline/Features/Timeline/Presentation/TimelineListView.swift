@@ -16,16 +16,31 @@ struct TimelineListView: View {
     var body: some View {
         NavigationItemContainer(title: "Timeline") {
             ScrollView {
-                LazyVStack(alignment: .leading) {
-                    ForEach(self.viewModel.timelines, id: \.id) { item in
-                        CardView {
-                            ListTile(
-                                image: Image("Item"),
-                                text: "01",
-                                title: "The Mall Bangkae",
-                                subtitle: "01.08.2021 09:00"
+                LazyVStack {
+                    Group { () -> AnyView in
+                        switch viewModel.state {
+                        case .Init:
+                            return AnyView(Spacer())
+                        case .Loading:
+                            return AnyView(
+                                ActivityIndicator(isAnimating: .constant(true), style: .large)
                             )
-                        }.padding()
+                        case .Success(let timelines):
+                            return AnyView(
+                                ForEach(timelines, id: \.id) { item in
+                                    CardView {
+                                        ListTile(
+                                            image: Image("Item"),
+                                            text: "01",
+                                            title: "The Mall Bangkae",
+                                            subtitle: "01.08.2021 09:00"
+                                        )
+                                    }.padding()
+                                }
+                            )
+                        case .Error(_):
+                            return AnyView(Text("Error"))
+                        }
                     }
                 }
             }
