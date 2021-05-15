@@ -8,9 +8,13 @@
 import Foundation
 import Combine
 import Resolver
+import SwiftLocation
+import CoreLocation
 
 class TimelineViewModel: ObservableObject, CoreViewModel {
     typealias Intent = TimelineIntent
+    
+    @Injected var getCurrentLocationUseCase: GetCurrentLocationUseCase
     
     @Published var state: TimelineState = .Init
     
@@ -25,6 +29,11 @@ class TimelineViewModel: ObservableObject, CoreViewModel {
         case TimelineIntent.AddTimeline:
             self.state = .Loading
             
+            self.getCurrentLocationUseCase.execute().then { location in
+                print("location: \(location.address)")
+            }.catch{ (error) in
+                self.state = .Error("")
+            }
             break
         }
     }

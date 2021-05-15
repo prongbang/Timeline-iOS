@@ -79,6 +79,7 @@ struct TimelineView: View {
                     
                     RoundedButton(text: "CHECK IN") {
                         print("Clicked")
+                        self.viewModel.process(intent: .AddTimeline)
                     }
                 }
             }

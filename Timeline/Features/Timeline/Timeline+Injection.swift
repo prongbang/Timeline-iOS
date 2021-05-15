@@ -21,5 +21,7 @@ extension Resolver {
         }
         register{ DefaultAddTimelineUseCase(timelineRepository: resolve()) as AddTimelineUseCase }
         register{ DefaultGetTimelineUseCase(timelineRepository: resolve()) as GetTimelineUseCase }
+        register{ DefaultGetAddressFromPlacemarkUseCase() as GetAddressFromPlacemarkUseCase }
+        register{ DefaultGetCurrentLocationUseCase(getAddressFromPlacemarkUseCase: resolve()) as GetCurrentLocationUseCase }
     }
 }

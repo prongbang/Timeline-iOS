@@ -45,6 +45,8 @@
 		FBB80F22264FD5A500917997 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB80F21264FD5A500917997 /* Theme.swift */; };
 		FBB80F26264FD76300917997 /* TimelineRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB80F25264FD76300917997 /* TimelineRemoteDataSource.swift */; };
 		FBB80F28264FD7B800917997 /* TimelineRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB80F27264FD7B800917997 /* TimelineRepository.swift */; };
+		FBB80F2A264FE70000917997 /* GetAddressFromPlacemarkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB80F29264FE70000917997 /* GetAddressFromPlacemarkUseCase.swift */; };
+		FBB80F2C264FE7F900917997 /* GetCurrentLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB80F2B264FE7F900917997 /* GetCurrentLocationUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +92,8 @@
 		FBB80F21264FD5A500917997 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		FBB80F25264FD76300917997 /* TimelineRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineRemoteDataSource.swift; sourceTree = "<group>"; };
 		FBB80F27264FD7B800917997 /* TimelineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineRepository.swift; sourceTree = "<group>"; };
+		FBB80F29264FE70000917997 /* GetAddressFromPlacemarkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAddressFromPlacemarkUseCase.swift; sourceTree = "<group>"; };
+		FBB80F2B264FE7F900917997 /* GetCurrentLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentLocationUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +221,8 @@
 				FB827479264584DB00EEF82F /* Timeline.swift */,
 				FB82747C2645860F00EEF82F /* GetTimelineUseCase.swift */,
 				FB58C3B02645A97200892942 /* AddTimelineUseCase.swift */,
+				FBB80F29264FE70000917997 /* GetAddressFromPlacemarkUseCase.swift */,
+				FBB80F2B264FE7F900917997 /* GetCurrentLocationUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -404,9 +410,11 @@
 				FB58C3CE2645AD4B00892942 /* TimelineDataSource.swift in Sources */,
 				FBB80F28264FD7B800917997 /* TimelineRepository.swift in Sources */,
 				FBB80F15264FA7A600917997 /* CardView.swift in Sources */,
+				FBB80F2A264FE70000917997 /* GetAddressFromPlacemarkUseCase.swift in Sources */,
 				FB814582264D7F15006993D5 /* Color+Extension.swift in Sources */,
 				FB82743426457B1400EEF82F /* Timeline+Injection.swift in Sources */,
 				FB814591264E1D7F006993D5 /* TimelineListView.swift in Sources */,
+				FBB80F2C264FE7F900917997 /* GetCurrentLocationUseCase.swift in Sources */,
 				FB82743D26457BA800EEF82F /* TimelineView.swift in Sources */,
 				FBB80F0F264EEEAA00917997 /* Navigator.swift in Sources */,
 				FBB80F17264FAAE100917997 /* ListTile.swift in Sources */,

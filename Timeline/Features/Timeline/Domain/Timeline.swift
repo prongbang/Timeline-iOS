@@ -20,4 +20,5 @@ class Timeline: Codable {
 class Location: Codable {
     var lat: Double = 0
     var lng: Double = 0
+    var address: String = ""
 }
