@@ -9,20 +9,21 @@ import Foundation
 import Promises
 
 protocol AddTimelineUseCase {
-    func execute(params: Unit) -> Promise<Bool>
+    func execute(params: Timeline) -> Promise<Bool>
 }
 
 struct DefaultAddTimelineUseCase: AddTimelineUseCase {
     
+    private let getLocalCurrentTimestampUseCase: GetCurrentTimestampUseCase
     private let timelineRepository: TimelineRepository
     
-    init(timelineRepository: TimelineRepository) {
+    init(timelineRepository: TimelineRepository, getLocalCurrentTimestampUseCase: GetCurrentTimestampUseCase) {
         self.timelineRepository = timelineRepository
+        self.getLocalCurrentTimestampUseCase = getLocalCurrentTimestampUseCase
     }
     
-    func execute(params: Unit) -> Promise<Bool> {
-        return Promise<Bool> { (resolve, reject) in
-            
-        }
+    func execute(params: Timeline) -> Promise<Bool> {
+        params.timestamp = getLocalCurrentTimestampUseCase.execute()
+        return self.timelineRepository.add(timeline: params)
     }
 }

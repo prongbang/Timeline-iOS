@@ -7,18 +7,36 @@
 //  let place = try? newJSONDecoder().decode(Place.self, from: jsonData)
 
 import Foundation
+import RealmSwift
 
 // MARK: - Timeline
-class Timeline: Codable {
-    var id: Int = 0
-    var name: String = ""
-    var timestamp: Int = 0
-    var location: Location = Location()
+class Timeline: Object {
+    @objc dynamic var id: ObjectId = ObjectId.generate()
+    @objc dynamic var timestamp: Int = 0
+    @objc dynamic var location: Location? = Location()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    func day() -> String {
+        let date = Date(timeIntervalSince1970: Double(timestamp/1_000))
+        return "\(date.get(.day))"
+    }
+    
+    func datetime() -> String {
+        let date = Date(timeIntervalSince1970: Double(timestamp/1_000))
+        return "\(date.get(.day)).\(date.get(.month)).\(date.get(.year)) \(date.get(.hour)):\(date.get(.minute))"
+    }
+    
+    func address() -> String {
+        return location?.address ?? ""
+    }
 }
 
 // MARK: - Location
-class Location: Codable {
-    var lat: Double = 0
-    var lng: Double = 0
-    var address: String = ""
+class Location: Object {
+    @objc dynamic var lat: Double = 0
+    @objc dynamic var lng: Double = 0
+    @objc dynamic var address: String = ""
 }

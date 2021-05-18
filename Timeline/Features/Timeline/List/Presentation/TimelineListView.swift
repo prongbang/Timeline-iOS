@@ -11,7 +11,7 @@ struct TimelineListView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    @ObservedObject var viewModel = TimelineViewModel()
+    @ObservedObject var viewModel = TimelineListViewModel()
     
     var body: some View {
         NavigationItemContainer(title: "Timeline") {
@@ -25,17 +25,21 @@ struct TimelineListView: View {
                             return AnyView(
                                 ActivityIndicator(isAnimating: .constant(true), style: .large)
                             )
-                        case .Success(let timelines):
+                        case .TimelineList(let timelines):
                             return AnyView(
                                 ForEach(timelines, id: \.id) { item in
                                     CardView {
                                         ListTile(
                                             image: Image("Item"),
-                                            text: "01",
-                                            title: "The Mall Bangkae",
-                                            subtitle: "01.08.2021 09:00"
+                                            text: item.day(),
+                                            title: item.address(),
+                                            subtitle: item.datetime()
                                         )
-                                    }.padding()
+                                    }
+                                    .padding(.bottom, 8)
+                                    .padding(.top, 8)
+                                    .padding(.leading, 16)
+                                    .padding(.trailing, 16)
                                 }
                             )
                         case .Error(_):
@@ -45,7 +49,7 @@ struct TimelineListView: View {
                 }
             }
         }.onAppear {
-            self.viewModel.process(intent: .GetTimeline)
+            self.viewModel.process(intent: .GetTimelineList)
         }
     }
 }

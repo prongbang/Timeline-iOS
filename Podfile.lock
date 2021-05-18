@@ -2,11 +2,17 @@ PODS:
   - PromisesObjC (2.0.0)
   - PromisesSwift (2.0.0):
     - PromisesObjC (= 2.0.0)
+  - Realm (10.7.4):
+    - Realm/Headers (= 10.7.4)
+  - Realm/Headers (10.7.4)
+  - RealmSwift (10.7.4):
+    - Realm (= 10.7.4)
   - Resolver (1.4.1)
   - SwiftLocation/Core (5.1.0)
 
 DEPENDENCIES:
   - PromisesSwift
+  - RealmSwift
   - Resolver
   - SwiftLocation/Core
 
@@ -14,15 +20,19 @@ SPEC REPOS:
   trunk:
     - PromisesObjC
     - PromisesSwift
+    - Realm
+    - RealmSwift
     - Resolver
     - SwiftLocation
 
 SPEC CHECKSUMS:
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   PromisesSwift: e0b2a6433469efb0b83a2b84c62a2abab8e5e5d4
+  Realm: f08ce1a85649a41303ecfe1cbd914c62e9e6d710
+  RealmSwift: 60ec49d165f23d040ab48811d8dd177e09baf4d3
   Resolver: c293d0177cbc69fcb700cfd49922ae2122c1829c
   SwiftLocation: 83e0ea75a1969cee3a1197e2b7095603fc23fde5
 
-PODFILE CHECKSUM: 0e4be5f6725c9f103b7942ceab6772f1135b2f96
+PODFILE CHECKSUM: ddc670ff44aabe8125438f21039e060a0c381829
 
 COCOAPODS: 1.10.1

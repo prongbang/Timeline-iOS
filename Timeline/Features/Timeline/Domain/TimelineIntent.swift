@@ -6,6 +6,7 @@
 //
 
 enum TimelineIntent {
-    case GetTimeline
+    case GetTimelineLast
     case AddTimeline
+    case GetCurrentLocation
 }

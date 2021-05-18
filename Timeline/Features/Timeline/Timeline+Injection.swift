@@ -11,7 +11,7 @@ extension Resolver {
     
     public static func registerTimeline() {
         // register{ MoyaProvider<HolidayService>() }
-        register(name: "TimelineLocalDataSource") { TimelineLocalDataSource() as TimelineDataSource }
+        register(name: "TimelineLocalDataSource") { TimelineLocalDataSource(realm: resolve()) as TimelineDataSource }
         register(name: "TimelineRemoteDataSource") { TimelineRemoteDataSource() as TimelineDataSource }
         register{
             DefaultTimelineRepository(
@@ -19,8 +19,14 @@ extension Resolver {
                 timelineLocalDataSource: resolve(name: "TimelineLocalDataSource")
             ) as TimelineRepository
         }
-        register{ DefaultAddTimelineUseCase(timelineRepository: resolve()) as AddTimelineUseCase }
-        register{ DefaultGetTimelineUseCase(timelineRepository: resolve()) as GetTimelineUseCase }
+        register{
+            DefaultAddTimelineUseCase(
+                timelineRepository: resolve(),
+                getLocalCurrentTimestampUseCase: resolve()
+            ) as AddTimelineUseCase
+        }
+        register{ DefaultGetAllTimelineUseCase(timelineRepository: resolve()) as GetAllTimelineUseCase }
+        register {DefaultGetTimelineLastUseCase(timelineRepository: resolve()) as GetTimelineLastUseCase}
         register{ DefaultGetAddressFromPlacemarkUseCase() as GetAddressFromPlacemarkUseCase }
         register{ DefaultGetCurrentLocationUseCase(getAddressFromPlacemarkUseCase: resolve()) as GetCurrentLocationUseCase }
     }

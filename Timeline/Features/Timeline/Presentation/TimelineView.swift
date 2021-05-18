@@ -32,9 +32,18 @@ struct TimelineView: View {
                                     VStack(alignment: .leading) {
                                         Text("Last check in")
                                             .foregroundColor(Color(#colorLiteral(red: 0.1960784197, green: 0.521568656, blue: 0.9294117689, alpha: 1)))
-                                        Text("The Mall Bangkae, 01.08.2021 09:00")
-                                            .foregroundColor(Color(#colorLiteral(red: 0.07843137255, green: 0.09019607843, blue: 0.3960784314, alpha: 1)))
-                                            .padding(.bottom, 24)
+                                        Group { () -> AnyView in
+                                            if case TimelineState.TimelineLast(let timeline) = viewModel.state {
+                                                return AnyView(
+                                                    Text("\(timeline.address()), \(timeline.datetime())")
+                                                        .foregroundColor(Color(#colorLiteral(red: 0.07843137255, green: 0.09019607843, blue: 0.3960784314, alpha: 1)))
+                                                        .padding(.bottom, 24)
+                                                )
+                                            } else if case TimelineState.Loading = viewModel.state {
+                                                return AnyView(ActivityIndicator(isAnimating: .constant(true), style: .medium))
+                                            }
+                                            return AnyView(Spacer())
+                                        }
                                     }
                                     Spacer()
                                     VStack(alignment: .trailing) {
@@ -84,7 +93,7 @@ struct TimelineView: View {
                 }
             }
             .onAppear {
-                
+                self.viewModel.process(intent: .GetTimelineLast)
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())

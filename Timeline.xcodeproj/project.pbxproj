@@ -31,7 +31,7 @@
 		FB827474264583B500EEF82F /* TimelineIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB827473264583B500EEF82F /* TimelineIntent.swift */; };
 		FB827477264584AD00EEF82F /* TimelineState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB827476264584AD00EEF82F /* TimelineState.swift */; };
 		FB82747A264584DB00EEF82F /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB827479264584DB00EEF82F /* Timeline.swift */; };
-		FB82747D2645860F00EEF82F /* GetTimelineUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82747C2645860F00EEF82F /* GetTimelineUseCase.swift */; };
+		FB82747D2645860F00EEF82F /* GetAllTimelineUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82747C2645860F00EEF82F /* GetAllTimelineUseCase.swift */; };
 		FBB80F0D264EEE7D00917997 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB80F0C264EEE7D00917997 /* Route.swift */; };
 		FBB80F0F264EEEAA00917997 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB80F0E264EEEAA00917997 /* Navigator.swift */; };
 		FBB80F11264F98CE00917997 /* NavigationItemContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB80F10264F98CE00917997 /* NavigationItemContainer.swift */; };
@@ -47,6 +47,14 @@
 		FBB80F28264FD7B800917997 /* TimelineRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB80F27264FD7B800917997 /* TimelineRepository.swift */; };
 		FBB80F2A264FE70000917997 /* GetAddressFromPlacemarkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB80F29264FE70000917997 /* GetAddressFromPlacemarkUseCase.swift */; };
 		FBB80F2C264FE7F900917997 /* GetCurrentLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB80F2B264FE7F900917997 /* GetCurrentLocationUseCase.swift */; };
+		FBC0A2B926541F7400ECEC03 /* GetCurrentTimestampUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0A2B826541F7400ECEC03 /* GetCurrentTimestampUseCase.swift */; };
+		FBC0A2BB265420BB00ECEC03 /* Core+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0A2BA265420BB00ECEC03 /* Core+Injection.swift */; };
+		FBC0A2BD265422DF00ECEC03 /* GetTimelineLastUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0A2BC265422DF00ECEC03 /* GetTimelineLastUseCase.swift */; };
+		FBC0A2C12654265800ECEC03 /* TimelineListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0A2C02654265800ECEC03 /* TimelineListViewModel.swift */; };
+		FBC0A2C42654268700ECEC03 /* TimelineListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0A2C32654268700ECEC03 /* TimelineListIntent.swift */; };
+		FBC0A2C62654269600ECEC03 /* TimelineListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0A2C52654269600ECEC03 /* TimelineListState.swift */; };
+		FBC0A2C826542BB900ECEC03 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0A2C726542BB900ECEC03 /* Date+Extension.swift */; };
+		FBC0A2CA2654320C00ECEC03 /* TimelineEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0A2C92654320C00ECEC03 /* TimelineEffect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +86,7 @@
 		FB827473264583B500EEF82F /* TimelineIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineIntent.swift; sourceTree = "<group>"; };
 		FB827476264584AD00EEF82F /* TimelineState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineState.swift; sourceTree = "<group>"; };
 		FB827479264584DB00EEF82F /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
-		FB82747C2645860F00EEF82F /* GetTimelineUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTimelineUseCase.swift; sourceTree = "<group>"; };
+		FB82747C2645860F00EEF82F /* GetAllTimelineUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllTimelineUseCase.swift; sourceTree = "<group>"; };
 		FBB80F0C264EEE7D00917997 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		FBB80F0E264EEEAA00917997 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		FBB80F10264F98CE00917997 /* NavigationItemContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemContainer.swift; sourceTree = "<group>"; };
@@ -94,6 +102,14 @@
 		FBB80F27264FD7B800917997 /* TimelineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineRepository.swift; sourceTree = "<group>"; };
 		FBB80F29264FE70000917997 /* GetAddressFromPlacemarkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAddressFromPlacemarkUseCase.swift; sourceTree = "<group>"; };
 		FBB80F2B264FE7F900917997 /* GetCurrentLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentLocationUseCase.swift; sourceTree = "<group>"; };
+		FBC0A2B826541F7400ECEC03 /* GetCurrentTimestampUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentTimestampUseCase.swift; sourceTree = "<group>"; };
+		FBC0A2BA265420BB00ECEC03 /* Core+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core+Injection.swift"; sourceTree = "<group>"; };
+		FBC0A2BC265422DF00ECEC03 /* GetTimelineLastUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTimelineLastUseCase.swift; sourceTree = "<group>"; };
+		FBC0A2C02654265800ECEC03 /* TimelineListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineListViewModel.swift; sourceTree = "<group>"; };
+		FBC0A2C32654268700ECEC03 /* TimelineListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineListIntent.swift; sourceTree = "<group>"; };
+		FBC0A2C52654269600ECEC03 /* TimelineListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineListState.swift; sourceTree = "<group>"; };
+		FBC0A2C726542BB900ECEC03 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		FBC0A2C92654320C00ECEC03 /* TimelineEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineEffect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,10 +178,10 @@
 				FB82742726457A6F00EEF82F /* Core */,
 				FB82744226457BFD00EEF82F /* Features */,
 				FB827417264579CB00EEF82F /* TimelineApp.swift */,
+				FB82742F26457ACC00EEF82F /* App+Injection.swift */,
 				FB82741B264579CD00EEF82F /* Assets.xcassets */,
 				FB827420264579CD00EEF82F /* Info.plist */,
 				FB82741D264579CD00EEF82F /* Preview Content */,
-				FB82742F26457ACC00EEF82F /* App+Injection.swift */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -181,12 +197,14 @@
 		FB82742726457A6F00EEF82F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FBC0A2B726541F5000ECEC03 /* DateTime */,
 				FB82742826457A8800EEF82F /* ActivityIndicator.swift */,
 				FB82742C26457AA500EEF82F /* UseCase.swift */,
 				FB8274702645830D00EEF82F /* CoreViewModel.swift */,
 				FBB80F10264F98CE00917997 /* NavigationItemContainer.swift */,
 				FBB80F1F264FBC5800917997 /* NavigationBarModifier.swift */,
 				FBB80F21264FD5A500917997 /* Theme.swift */,
+				FBC0A2BA265420BB00ECEC03 /* Core+Injection.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -194,6 +212,7 @@
 		FB82743226457AF900EEF82F /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				FBC0A2BE2654262A00ECEC03 /* List */,
 				FB82743726457B4800EEF82F /* Data */,
 				FB82743826457B4E00EEF82F /* Domain */,
 				FB82743926457B5400EEF82F /* Presentation */,
@@ -219,10 +238,12 @@
 				FB827473264583B500EEF82F /* TimelineIntent.swift */,
 				FB827476264584AD00EEF82F /* TimelineState.swift */,
 				FB827479264584DB00EEF82F /* Timeline.swift */,
-				FB82747C2645860F00EEF82F /* GetTimelineUseCase.swift */,
+				FB82747C2645860F00EEF82F /* GetAllTimelineUseCase.swift */,
 				FB58C3B02645A97200892942 /* AddTimelineUseCase.swift */,
 				FBB80F29264FE70000917997 /* GetAddressFromPlacemarkUseCase.swift */,
 				FBB80F2B264FE7F900917997 /* GetCurrentLocationUseCase.swift */,
+				FBC0A2BC265422DF00ECEC03 /* GetTimelineLastUseCase.swift */,
+				FBC0A2C92654320C00ECEC03 /* TimelineEffect.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -232,7 +253,6 @@
 			children = (
 				FB82743C26457BA800EEF82F /* TimelineView.swift */,
 				FB82746D2645824400EEF82F /* TimelineViewModel.swift */,
-				FB814590264E1D7F006993D5 /* TimelineListView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -290,8 +310,44 @@
 			children = (
 				FB814581264D7F15006993D5 /* Color+Extension.swift */,
 				FBB80F1D264FB1E700917997 /* View+Extension.swift */,
+				FBC0A2C726542BB900ECEC03 /* Date+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FBC0A2B726541F5000ECEC03 /* DateTime */ = {
+			isa = PBXGroup;
+			children = (
+				FBC0A2B826541F7400ECEC03 /* GetCurrentTimestampUseCase.swift */,
+			);
+			path = DateTime;
+			sourceTree = "<group>";
+		};
+		FBC0A2BE2654262A00ECEC03 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				FBC0A2C22654266B00ECEC03 /* Domain */,
+				FBC0A2BF2654263800ECEC03 /* Presentation */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		FBC0A2BF2654263800ECEC03 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				FB814590264E1D7F006993D5 /* TimelineListView.swift */,
+				FBC0A2C02654265800ECEC03 /* TimelineListViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		FBC0A2C22654266B00ECEC03 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				FBC0A2C32654268700ECEC03 /* TimelineListIntent.swift */,
+				FBC0A2C52654269600ECEC03 /* TimelineListState.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +464,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB58C3CE2645AD4B00892942 /* TimelineDataSource.swift in Sources */,
+				FBC0A2C826542BB900ECEC03 /* Date+Extension.swift in Sources */,
+				FBC0A2CA2654320C00ECEC03 /* TimelineEffect.swift in Sources */,
 				FBB80F28264FD7B800917997 /* TimelineRepository.swift in Sources */,
 				FBB80F15264FA7A600917997 /* CardView.swift in Sources */,
 				FBB80F2A264FE70000917997 /* GetAddressFromPlacemarkUseCase.swift in Sources */,
@@ -417,14 +475,17 @@
 				FBB80F2C264FE7F900917997 /* GetCurrentLocationUseCase.swift in Sources */,
 				FB82743D26457BA800EEF82F /* TimelineView.swift in Sources */,
 				FBB80F0F264EEEAA00917997 /* Navigator.swift in Sources */,
+				FBC0A2C42654268700ECEC03 /* TimelineListIntent.swift in Sources */,
 				FBB80F17264FAAE100917997 /* ListTile.swift in Sources */,
 				FB827460264580F700EEF82F /* BottomAppBar.swift in Sources */,
 				FBB80F11264F98CE00917997 /* NavigationItemContainer.swift in Sources */,
+				FBC0A2B926541F7400ECEC03 /* GetCurrentTimestampUseCase.swift in Sources */,
 				FBB80F20264FBC5800917997 /* NavigationBarModifier.swift in Sources */,
-				FB82747D2645860F00EEF82F /* GetTimelineUseCase.swift in Sources */,
+				FB82747D2645860F00EEF82F /* GetAllTimelineUseCase.swift in Sources */,
 				FB82747A264584DB00EEF82F /* Timeline.swift in Sources */,
 				FB82743026457ACC00EEF82F /* App+Injection.swift in Sources */,
 				FBB80F0D264EEE7D00917997 /* Route.swift in Sources */,
+				FBC0A2BD265422DF00ECEC03 /* GetTimelineLastUseCase.swift in Sources */,
 				FBB80F22264FD5A500917997 /* Theme.swift in Sources */,
 				FB827474264583B500EEF82F /* TimelineIntent.swift in Sources */,
 				FB82746E2645824400EEF82F /* TimelineViewModel.swift in Sources */,
@@ -435,14 +496,17 @@
 				FBB80F19264FAED100917997 /* ImageView.swift in Sources */,
 				FB58C3D82645B78300892942 /* RealmConfig.swift in Sources */,
 				FB827477264584AD00EEF82F /* TimelineState.swift in Sources */,
+				FBC0A2C62654269600ECEC03 /* TimelineListState.swift in Sources */,
 				FBB80F1E264FB1E700917997 /* View+Extension.swift in Sources */,
 				FB82742926457A8800EEF82F /* ActivityIndicator.swift in Sources */,
 				FB58C3B12645A97200892942 /* AddTimelineUseCase.swift in Sources */,
+				FBC0A2BB265420BB00ECEC03 /* Core+Injection.swift in Sources */,
 				FBB80F1B264FAF3000917997 /* ListSeparatorStyleNoneModifier.swift in Sources */,
 				FB58C38A26459DAA00892942 /* DataStore+Injection.swift in Sources */,
 				FB81458E264E167F006993D5 /* GradientButtonStyle.swift in Sources */,
 				FB82745D26457E9C00EEF82F /* FloatingActionButton.swift in Sources */,
 				FB827418264579CB00EEF82F /* TimelineApp.swift in Sources */,
+				FBC0A2C12654265800ECEC03 /* TimelineListViewModel.swift in Sources */,
 				FBB80F13264FA5BC00917997 /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

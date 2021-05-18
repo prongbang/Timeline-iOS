@@ -8,6 +8,5 @@
 enum TimelineState {
     case Init
     case Loading
-    case Success([Timeline])
-    case Error(String)
+    case TimelineLast(Timeline)
 }

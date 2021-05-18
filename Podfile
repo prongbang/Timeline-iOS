@@ -12,7 +12,7 @@ target 'Timeline' do
   # pod 'KeychainAccess'
   # pod 'Locksmith'
   
-  # pod 'RealmSwift', '>=10.1.4'
+  pod 'RealmSwift'
   pod 'PromisesSwift'
   pod "Resolver"
   pod 'SwiftLocation/Core'

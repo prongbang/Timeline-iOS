@@ -8,11 +8,11 @@
 import Foundation
 import Promises
 
-protocol GetTimelineUseCase {
-    func execute(params: Unit) -> Promise<Timeline>
+protocol GetAllTimelineUseCase {
+    func execute() -> Promise<Array<Timeline>>
 }
 
-class DefaultGetTimelineUseCase : GetTimelineUseCase {
+class DefaultGetAllTimelineUseCase : GetAllTimelineUseCase {
     
     private let timelineRepository: TimelineRepository
     
@@ -20,10 +20,8 @@ class DefaultGetTimelineUseCase : GetTimelineUseCase {
         self.timelineRepository = timelineRepository
     }
     
-    func execute(params: Unit) -> Promise<Timeline> {
-        return Promise<Timeline> { (resolve, reject) in
-            
-        }
+    func execute() -> Promise<Array<Timeline>> {
+        return self.timelineRepository.findAll()
     }
 
 }

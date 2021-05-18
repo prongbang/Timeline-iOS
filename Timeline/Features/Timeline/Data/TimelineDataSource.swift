@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import Promises
 
 protocol TimelineDataSource {
-    
+    func add(timeline: Timeline) -> Promise<Bool>
+    func findLast() -> Promise<Timeline>
+    func findAll() -> Promise<Array<Timeline>>
 }

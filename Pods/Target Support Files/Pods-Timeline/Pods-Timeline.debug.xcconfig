@@ -1,10 +1,11 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC" "${PODS_CONFIGURATION_BUILD_DIR}/PromisesSwift" "${PODS_CONFIGURATION_BUILD_DIR}/Resolver" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftLocation"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC" "${PODS_CONFIGURATION_BUILD_DIR}/PromisesSwift" "${PODS_CONFIGURATION_BUILD_DIR}/Realm" "${PODS_CONFIGURATION_BUILD_DIR}/RealmSwift" "${PODS_CONFIGURATION_BUILD_DIR}/Resolver" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftLocation" "${PODS_ROOT}/Realm/core"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/PromisesSwift/Promises.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Resolver/Resolver.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftLocation/SwiftLocation.framework/Headers" "${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/PromisesSwift/Promises.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Realm/Realm.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RealmSwift/RealmSwift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Resolver/Resolver.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftLocation/SwiftLocation.framework/Headers" "${PODS_XCFRAMEWORKS_BUILD_DIR}/realm-monorepo/Headers" "${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "CoreLocation" -framework "FBLPromises" -framework "Foundation" -framework "MapKit" -framework "Promises" -framework "Resolver" -framework "SwiftLocation" -framework "UIKit"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_XCFRAMEWORKS_BUILD_DIR}/realm-monorepo"
+OTHER_LDFLAGS = $(inherited) -l"c++" -l"z" -framework "CoreLocation" -framework "FBLPromises" -framework "Foundation" -framework "MapKit" -framework "Promises" -framework "Realm" -framework "RealmSwift" -framework "Resolver" -framework "Security" -framework "SwiftLocation" -framework "UIKit"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
