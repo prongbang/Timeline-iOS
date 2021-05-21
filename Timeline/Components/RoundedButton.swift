@@ -15,7 +15,7 @@ struct RoundedButton: View {
         Button(action: self.action) {
             Text(self.text)
                 .bold()
-                .padding(8)
+                .padding(4)
                 .frame(maxWidth: .infinity)
         }
         .padding()

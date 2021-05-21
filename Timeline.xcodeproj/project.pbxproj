@@ -55,6 +55,9 @@
 		FBC0A2C62654269600ECEC03 /* TimelineListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0A2C52654269600ECEC03 /* TimelineListState.swift */; };
 		FBC0A2C826542BB900ECEC03 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0A2C726542BB900ECEC03 /* Date+Extension.swift */; };
 		FBC0A2CA2654320C00ECEC03 /* TimelineEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0A2C92654320C00ECEC03 /* TimelineEffect.swift */; };
+		FBF3880526580A3200E59CC6 /* LocationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3880426580A3200E59CC6 /* LocationState.swift */; };
+		FBF3880826580D6A00E59CC6 /* PermissionsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3880726580D6A00E59CC6 /* PermissionsUtility.swift */; };
+		FBF3880A26580EA900E59CC6 /* Permissions+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3880926580EA900E59CC6 /* Permissions+Injection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +113,9 @@
 		FBC0A2C52654269600ECEC03 /* TimelineListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineListState.swift; sourceTree = "<group>"; };
 		FBC0A2C726542BB900ECEC03 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		FBC0A2C92654320C00ECEC03 /* TimelineEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineEffect.swift; sourceTree = "<group>"; };
+		FBF3880426580A3200E59CC6 /* LocationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationState.swift; sourceTree = "<group>"; };
+		FBF3880726580D6A00E59CC6 /* PermissionsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsUtility.swift; sourceTree = "<group>"; };
+		FBF3880926580EA900E59CC6 /* Permissions+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Permissions+Injection.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,7 @@
 		FB827416264579CB00EEF82F /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				FBF3880626580D4F00E59CC6 /* Permissions */,
 				FBB80F0B264EEE7000917997 /* Router */,
 				FBB80F1C264FB1BD00917997 /* Extensions */,
 				FB58C3842645996600892942 /* DataStore */,
@@ -238,6 +245,7 @@
 				FB827473264583B500EEF82F /* TimelineIntent.swift */,
 				FB827476264584AD00EEF82F /* TimelineState.swift */,
 				FB827479264584DB00EEF82F /* Timeline.swift */,
+				FBF3880426580A3200E59CC6 /* LocationState.swift */,
 				FB82747C2645860F00EEF82F /* GetAllTimelineUseCase.swift */,
 				FB58C3B02645A97200892942 /* AddTimelineUseCase.swift */,
 				FBB80F29264FE70000917997 /* GetAddressFromPlacemarkUseCase.swift */,
@@ -348,6 +356,15 @@
 				FBC0A2C52654269600ECEC03 /* TimelineListState.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		FBF3880626580D4F00E59CC6 /* Permissions */ = {
+			isa = PBXGroup;
+			children = (
+				FBF3880726580D6A00E59CC6 /* PermissionsUtility.swift */,
+				FBF3880926580EA900E59CC6 /* Permissions+Injection.swift */,
+			);
+			path = Permissions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,6 +496,7 @@
 				FBB80F17264FAAE100917997 /* ListTile.swift in Sources */,
 				FB827460264580F700EEF82F /* BottomAppBar.swift in Sources */,
 				FBB80F11264F98CE00917997 /* NavigationItemContainer.swift in Sources */,
+				FBF3880A26580EA900E59CC6 /* Permissions+Injection.swift in Sources */,
 				FBC0A2B926541F7400ECEC03 /* GetCurrentTimestampUseCase.swift in Sources */,
 				FBB80F20264FBC5800917997 /* NavigationBarModifier.swift in Sources */,
 				FB82747D2645860F00EEF82F /* GetAllTimelineUseCase.swift in Sources */,
@@ -493,6 +511,7 @@
 				FB82742D26457AA500EEF82F /* UseCase.swift in Sources */,
 				FB58C3D12645AD7300892942 /* TimelineLocalDataSource.swift in Sources */,
 				FBB80F26264FD76300917997 /* TimelineRemoteDataSource.swift in Sources */,
+				FBF3880526580A3200E59CC6 /* LocationState.swift in Sources */,
 				FBB80F19264FAED100917997 /* ImageView.swift in Sources */,
 				FB58C3D82645B78300892942 /* RealmConfig.swift in Sources */,
 				FB827477264584AD00EEF82F /* TimelineState.swift in Sources */,
@@ -500,6 +519,7 @@
 				FBB80F1E264FB1E700917997 /* View+Extension.swift in Sources */,
 				FB82742926457A8800EEF82F /* ActivityIndicator.swift in Sources */,
 				FB58C3B12645A97200892942 /* AddTimelineUseCase.swift in Sources */,
+				FBF3880826580D6A00E59CC6 /* PermissionsUtility.swift in Sources */,
 				FBC0A2BB265420BB00ECEC03 /* Core+Injection.swift in Sources */,
 				FBB80F1B264FAF3000917997 /* ListSeparatorStyleNoneModifier.swift in Sources */,
 				FB58C38A26459DAA00892942 /* DataStore+Injection.swift in Sources */,

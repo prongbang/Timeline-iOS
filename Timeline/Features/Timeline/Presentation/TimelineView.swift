@@ -61,17 +61,27 @@ struct TimelineView: View {
                             
                             CardView {
                                 VStack(alignment: .leading) {
-                                    ListTile(
-                                        image: Image("Location"),
-                                        title: "Location",
-                                        subtitle: "London",
-                                        reverse: true
-                                    )
+                                    if case LocationState.CurrentLocation(let location) = viewModel.location {
+                                        AnyView(ListTile(
+                                            image: Image("Location"),
+                                            title: "Location",
+                                            subtitle: location.address,
+                                            reverse: true
+                                        ))
+                                    } else if case LocationState.LocationNotAllow = viewModel.location {
+                                        AnyView(Text("Location Not Allow"))
+                                    } else if case LocationState.LocationDisabled = viewModel.location {
+                                        AnyView(Text("Location Disabled"))
+                                    } else if case LocationState.Error = viewModel.location {
+                                        AnyView(Text("Location Error"))
+                                    } else {
+                                        AnyView(Text("Cannot get location"))
+                                    }
                                     Spacer().frame(height: 24)
                                     ListTile(
                                         image: Image("Calendar"),
                                         title: "Check In",
-                                        subtitle: "01.08.2021 09.00",
+                                        subtitle: viewModel.currentDate,
                                         reverse: true
                                     )
                                 }
@@ -94,6 +104,7 @@ struct TimelineView: View {
             }
             .onAppear {
                 self.viewModel.process(intent: .GetTimelineLast)
+                self.viewModel.process(intent: .GetCurrentLocation)
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())

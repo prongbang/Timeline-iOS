@@ -33,11 +33,11 @@ struct TimelineListView: View {
                                             image: Image("Item"),
                                             text: item.day(),
                                             title: item.address(),
-                                            subtitle: item.datetime()
+                                            subtitle: "\(item.datetime())"
                                         )
                                     }
-                                    .padding(.bottom, 8)
-                                    .padding(.top, 8)
+                                    .padding(.bottom, 2)
+                                    .padding(.top, 10)
                                     .padding(.leading, 16)
                                     .padding(.trailing, 16)
                                 }

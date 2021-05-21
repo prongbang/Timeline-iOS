@@ -12,5 +12,6 @@ extension Resolver: ResolverRegistering {
         registerCore()
         registerTimeline()
         registerDataStore()
+        registerPermissions()
     }
 }

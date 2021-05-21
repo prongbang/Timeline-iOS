@@ -17,21 +17,20 @@ class TimelineViewModel: ObservableObject, CoreViewModel {
     @Injected var getCurrentLocationUseCase: GetCurrentLocationUseCase
     @Injected var addTimelineUseCase: AddTimelineUseCase
     @Injected var getTimelineLastUseCase: GetTimelineLastUseCase
+    @Injected var permissionsUtility: PermissionsUtility
     
     @Published var state: TimelineState = .Init
     @Published var effect: TimelineEffect = .Init
+    @Published var location: LocationState = .Init
+    @Published var currentDate: String = Timeline().datetime()
     
     func process(intent: TimelineIntent) {
-        switch intent {
-        case TimelineIntent.GetTimelineLast:
+        if case intent = TimelineIntent.GetTimelineLast {
             processGetTimelineLast()
-            break
-        case TimelineIntent.AddTimeline:
+        } else if case intent = TimelineIntent.AddTimeline {
             processAddTimeline()
-            break
-        case .GetCurrentLocation:
-            
-            break
+        } else if case intent = TimelineIntent.GetCurrentLocation {
+            processGetCurrentLocation()
         }
     }
     
@@ -62,6 +61,23 @@ class TimelineViewModel: ObservableObject, CoreViewModel {
         }.catch { e in
             print(e)
             self.effect = .Error
+        }
+    }
+    
+    func processGetCurrentLocation() {
+        if !self.permissionsUtility.locationEnabled() {
+            self.location = .LocationDisabled
+            return
+        }
+        
+        if self.permissionsUtility.locationAllowed() {
+            self.getCurrentLocationUseCase.execute().then { location in
+                self.location = .CurrentLocation(location)
+            }.catch { e in
+                self.location = .Error
+            }
+        } else {
+            self.location = .LocationNotAllow
         }
     }
 }

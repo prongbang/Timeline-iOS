@@ -26,11 +26,24 @@ class Timeline: Object {
     
     func datetime() -> String {
         let date = Date(timeIntervalSince1970: Double(timestamp/1_000))
-        return "\(date.get(.day)).\(date.get(.month)).\(date.get(.year)) \(date.get(.hour)):\(date.get(.minute))"
+        let day = date.get(.day)
+        let month = date.get(.month)
+        let year = date.get(.year)
+        let hour = date.get(.hour)
+        let minute = date.get(.minute)
+        return "\(format(num: day)).\(format(num: month)).\(format(num: year)) \(format(num: hour)):\(format(num: minute))"
     }
     
     func address() -> String {
         return location?.address ?? ""
+    }
+    
+    func format(num: Int) -> String {
+        return num > 9 ? "\(num)" : "0\(num)"
+    }
+    
+    func latLng() -> String {
+        return "\(location?.lat ?? 0),\(location?.lng ?? 0)"
     }
 }
 
